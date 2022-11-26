@@ -46,10 +46,6 @@ public class Encrypter {
 		KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 65536, 128);
 		SecretKey key = new SecretKeySpec(factory.generateSecret(spec).getEncoded(), encoder);
 		
-		String encodedKey = Base64.getEncoder().encodeToString(key.getEncoded());
-		
-		System.out.println(encodedKey);
-		
 		return key;
 	}
 	
@@ -58,10 +54,6 @@ public class Encrypter {
 		SecretKeyFactory factory = SecretKeyFactory.getInstance(passwordAlgorithm);
 		KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 65536, 128);
 		SecretKey key = new SecretKeySpec(factory.generateSecret(spec).getEncoded(), encoder);
-		
-		String encodedKey = Base64.getEncoder().encodeToString(key.getEncoded());
-		
-		System.out.println(encodedKey);
 		
 		return key;
 	}

@@ -45,7 +45,6 @@ public class Crypter {
 		
 		File outputFile1 = new File("Encrypted.dec");
 		outputFile1.createNewFile();
-		System.out.println(outputFile1.getAbsolutePath());
 		
 		Files.write(Paths.get(outputFile1.getAbsolutePath()), file);
 		
@@ -58,11 +57,6 @@ public class Crypter {
 		
 		
 		byte[] decrypt = encrypter.decryptFile("AES/CBC/PKCS5Padding", password, fileContent);
-		
-		System.out.println("Decrypted: ");
-		for(byte b : decrypt) {
-			System.out.println(b);	
-		}
 		
 		File outputFile = new File("DecryptedFile.dec");
 		outputFile.createNewFile();
