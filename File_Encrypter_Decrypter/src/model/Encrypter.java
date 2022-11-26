@@ -1,8 +1,6 @@
 package model;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.file.Files;
@@ -13,7 +11,6 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.KeySpec;
-import java.util.Base64;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
@@ -31,7 +28,7 @@ public class Encrypter {
 	private String passwordAlgorithm;
 	private String encoder;
 	private byte[] createdSalt;
-	
+
 	
 	public Encrypter(String passwordAlgorithm, String encoder) {
 		this.passwordAlgorithm = passwordAlgorithm;

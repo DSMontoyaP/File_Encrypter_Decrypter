@@ -72,6 +72,7 @@ public class MainController {
     @FXML
     void SelectFile(ActionEvent event) {
     	
+    	try {
     	FileChooser fileChooser = new FileChooser();
     	fileChooser.setTitle("Select file to encrypt");
     	
@@ -80,6 +81,7 @@ public class MainController {
         selectedFile = fileChooser.showOpenDialog(primaryStage);
     	
     	selectedFileLabel.setText(selectedFile.getName()); 
+    	}catch(Exception e) {}
         
     }
 
