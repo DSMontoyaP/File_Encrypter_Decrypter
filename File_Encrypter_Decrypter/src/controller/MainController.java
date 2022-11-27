@@ -13,15 +13,24 @@ import javax.crypto.NoSuchPaddingException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import model.Crypter;
 
 public class MainController {
 
+    @FXML
+    private Label decryptedHash;
+
+    @FXML
+    private Label signedHashLabel;
+	
     @FXML
     private Button encryptButton;
     
@@ -65,7 +74,19 @@ public class MainController {
     	if(!passwordTextField.getText().isBlank() && selectedFile != null){
     		crypter.setPassword(passwordTextField.getText());
     		crypter.setFile(selectedFile);
-    		crypter.decryptFile();
+    		String result = crypter.decryptFile();
+    		
+    		
+    		if(!result.equals("Alert")) {
+	    		String[] hashes = result.split(" ");
+	    		decryptedHash.setText(hashes[0]);
+	    		signedHashLabel.setText(hashes[1]);
+	    		
+	    		decryptedHash.setTextFill(Color.GREEN);
+	    		signedHashLabel.setTextFill(Color.GREEN);		
+    		}else {
+    			new Alert(AlertType.WARNING, "Mismatch in the signature detected, file has been tampered with");
+    		}
     	}	
     }
 

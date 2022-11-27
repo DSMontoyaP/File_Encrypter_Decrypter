@@ -69,6 +69,10 @@
             </Label>
             <Label fx:id="selectedFileLabel" layoutX="148.0" layoutY="22.0" prefHeight="17.0" prefWidth="467.0" text="None" />
             <Button fx:id="decryptButton" layoutX="324.0" layoutY="204.0" mnemonicParsing="false" onAction="#Decrypt" prefHeight="25.0" prefWidth="62.0" text="Decrypt" />
+            <Label layoutX="45.0" layoutY="241.0" prefHeight="25.0" prefWidth="80.0" text="Signed hash" />
+            <Label fx:id="signedHashLabel" layoutX="24.0" layoutY="279.0" prefHeight="67.0" prefWidth="164.0" wrapText="true" />
+            <Label layoutX="414.0" layoutY="241.0" prefHeight="25.0" prefWidth="134.0" text="Decrypted file hash" />
+            <Label fx:id="decryptedHash" layoutX="402.0" layoutY="279.0" prefHeight="67.0" prefWidth="164.0" wrapText="true" />
          </children>
     </AnchorPane>
   </children>

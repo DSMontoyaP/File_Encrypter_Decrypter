@@ -12,6 +12,7 @@ import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.util.Arrays;
+import java.util.InputMismatchException;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
@@ -58,18 +59,14 @@ public class Crypter {
 		byte[] fileContent = Files.readAllBytes(Paths.get(fileToUse.getAbsolutePath()));
 		String hash256 = hasher.hashSHA256(fileContent);
 		
-		System.out.println("ANTES: " + hash256);
-		System.out.println("ANTES: " + hash256.getBytes());
-		
 		Files.write(Paths.get(outputFile1.getAbsolutePath()), hash256.getBytes(), StandardOpenOption.APPEND);
 		
 	}
 
 
-	public void decryptFile() throws IOException, NoSuchAlgorithmException, InvalidKeySpecException, InvalidKeyException, NoSuchPaddingException, InvalidAlgorithmParameterException, BadPaddingException, IllegalBlockSizeException {	
+	public String decryptFile() throws IOException, NoSuchAlgorithmException, InvalidKeySpecException, InvalidKeyException, NoSuchPaddingException, InvalidAlgorithmParameterException, BadPaddingException, IllegalBlockSizeException {	
 
 		byte[] encryptedSignedContent = Files.readAllBytes(Paths.get(fileToUse.getAbsolutePath()));		
-		//byte[] fileContent = Arrays.copyOf(encryptedSignedContent, encryptedSignedContent.length - 64);
 		
 		ByteBuffer byteBuffer = ByteBuffer.wrap(encryptedSignedContent);
 		
@@ -90,12 +87,17 @@ public class Crypter {
 		String newHash = hasher.hashSHA256(outfileContent);
 		String bytes256Original = new String(signedHash, StandardCharsets.UTF_8);
 		
-		System.out.println(bytes256Original);
-		System.out.println("-------------------------");
-		System.out.println(newHash);
-		
-		
-		
+		try {
+			if(!newHash.equals(bytes256Original)) {
+				throw new InputMismatchException();
+			}
+				
+				
+				
+			return newHash + " " + bytes256Original;
+		}catch(Exception e) {
+			return "Alert";
+		}
 		
 		
 		
