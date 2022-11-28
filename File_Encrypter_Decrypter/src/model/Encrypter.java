@@ -75,10 +75,12 @@ public class Encrypter {
 		
 			byte[] fileContent = Files.readAllBytes(Paths.get(inputFile.getAbsolutePath()));
 		
-		
+			//Encrypts fileContent with given parameters
 		    Cipher cipher = Cipher.getInstance(algorithm);
 		    cipher.init(Cipher.ENCRYPT_MODE, key, iv);
-		    byte[] outputBytes = cipher.doFinal(fileContent);		    
+		    byte[] outputBytes = cipher.doFinal(fileContent);		 
+		    
+		    //Appends IV and Salt to the file (allows the program to decrypt without saving on volatile variables or files)
 		    byte[] outputBytesWithIvAndSalt = ByteBuffer.allocate(iv.getIV().length + createdSalt.length + outputBytes.length)
 		    		.put(iv.getIV()).put(createdSalt).put(outputBytes).array();
 		    
@@ -89,19 +91,19 @@ public class Encrypter {
 	public byte[] decryptFile(String algorithm, String password, byte[] fileContent) throws IOException, NoSuchPaddingException,
     NoSuchAlgorithmException, InvalidAlgorithmParameterException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException, InvalidKeySpecException {
 		
+		//Retrieves salt and IV from the file
 		ByteBuffer byteBuffer = ByteBuffer.wrap(fileContent);
-		
 		byte[] iv = new byte[16];
 		byteBuffer.get(iv);
-		
 		byte[] salt = new byte [16];
 		byteBuffer.get(salt);		
-		
 		byte[] remainder = new byte[byteBuffer.remaining()];
 		byteBuffer.get(remainder);
 		
+		//Generates password, which should be the same that the encrypter created when the file was first secured
 		SecretKey key = generateKeyForDecryption(password, salt);
 		
+		//Decrypts the file with given IV and key
 	    Cipher cipher = Cipher.getInstance(algorithm);
 	    cipher.init(Cipher.DECRYPT_MODE, key, new IvParameterSpec(iv));
 	    byte[] outputBytes = cipher.doFinal(remainder);

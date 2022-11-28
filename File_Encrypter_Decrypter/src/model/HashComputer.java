@@ -5,6 +5,7 @@ import java.security.NoSuchAlgorithmException;
 
 public class HashComputer {
 	
+	//Hashes given file content with SHA-256
 	public String hashSHA256(byte[] fileContent) throws NoSuchAlgorithmException {
 		
 		MessageDigest dig = MessageDigest.getInstance("SHA-256");
@@ -12,6 +13,7 @@ public class HashComputer {
 		return hexToString(hash);
 	}	
 	
+	//Translates hash to a more easily readable string
     public String hexToString(byte[] content) {
         StringBuilder hexString = new StringBuilder(2 * content.length);
         for (int i = 0; i < content.length; i++) {
