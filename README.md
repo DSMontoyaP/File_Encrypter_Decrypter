@@ -77,7 +77,9 @@ Se le solicita cargar un archivo que contenga información encriptada y la contr
 + Ingresa la contraseña que utilizo para cifrar
 
 
+
 ![resultado](Images/decifrado.png)
+
 
 
 + Obtiene el archivo decifrado y se muestran los valores hash en color verde si el proceso concluyó de forma correcta 
