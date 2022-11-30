@@ -38,22 +38,22 @@ la alta resistencia de colisión que tiene.
 **Función 1 (Cifrar archivo):** 
 
 
-![Inicio de porgrama](https://github.com/DSMontoyaP/File_Encrypter_Decrypter.git/Images/inicioApp.png)
+![Inicio de porgrama](Images/inicioApp.png)
 
 
 al ingresar al programa se le solicitara que cargue un archivo en texto legible y una contraseña para cifrar
 
 
-![Archivo que se va a cifrar](https://github.com/DSMontoyaP/File_Encrypter_Decrypter.git/Images/antesArchivo.png)
+![Archivo que se va a cifrar](Images/antesArchivo.png)
 
 
-![Selecciona archivo a cifrar](https://github.com/DSMontoyaP/File_Encrypter_Decrypter.git/Images/seleccionaArchivo.png)
+![Selecciona archivo a cifrar](Images/seleccionaArchivo.png)
 
 
 + Se selecciona el archivo que desea cifrar
 
 
-![Ingresa Contraseña para cifrar](https://github.com/DSMontoyaP/File_Encrypter_Decrypter.git/Images/ingresaPassword.png)
+![Ingresa Contraseña para cifrar](Images/ingresaPassword.png)
 
 
 + Se ingresa la contraseña que su utilizara para cifrar.
@@ -68,7 +68,7 @@ al ingresar al programa se le solicitara que cargue un archivo en texto legible 
 Se le solicita cargar un archivo que contenga información encriptada y la contraseña que se utilizo para cifrarlo
 
 
-![seleccion archivo encriptado](https://github.com/DSMontoyaP/File_Encrypter_Decrypter.git/Images/seleccionEncriptado.png)
+![seleccion archivo encriptado](Images/seleccionEncriptado.png)
 
 
 + Se selecciona y carga el archivo enciptado 
@@ -77,7 +77,7 @@ Se le solicita cargar un archivo que contenga información encriptada y la contr
 + Ingresa la contraseña que utilizo para cifrar
 
 
-![resultado](https://github.com/DSMontoyaP/File_Encrypter_Decrypter.git/Images/decifrado.png)
+![resultado](Images/decifrado.png)
 
 
 + Obtiene el archivo decifrado y se muestran los valores hash en color verde si el proceso concluyó de forma correcta 
