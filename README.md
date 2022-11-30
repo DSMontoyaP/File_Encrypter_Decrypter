@@ -11,7 +11,7 @@ El porgrama se desarrollo utilizando Java versión 11 y el paquete javax.crypto 
 operaciones criptograficas necesarias. Por otro lado, este programa permite almacenar hash SHA256 en el archivo encriptado.
 
 **Nota**: Si el archivo que ha sido encriptado es modificado el algoritmo AES no podra validar el archivo.
-***
+
 
 **Problemas:** 
 
@@ -29,29 +29,38 @@ en un formato ininteligible denominado texto cifrado, mientras que el descifrado
 no hay forma de generar el contenido asociado a él, salvo probando al azar hasta dar con el contenido. Por este motivo, SHA-256 es una de 
 las funciones más usados por su equilibrio entre seguridad y coste computacional de generación, pues es un algoritmo muy eficiente para 
 la alta resistencia de colisión que tiene.
+***
+
 
 **Instructivo de uso del programa:**
 
+
 **Función 1 (Cifrar archivo):** 
+
+
 
 al ingresar al programa se le solicitara que cargue un archivo en texto legible y una contraseña para cifrar
 
 
-+Se selecciona el archivo que desea cifrar
++ Se selecciona el archivo que desea cifrar
 
-+Se ingresa la contraseña que su utilizara para cifrar.
 
-+Obtendra un archivo con la información encriptada
++ Se ingresa la contraseña que su utilizara para cifrar.
+
+
++ Obtendra un archivo con la información encriptada
+
 
 **Función 2 (Decifrar archivo):** 
+
 
 Se le solicita cargar un archivo que contenga información encriptada y la contraseña que se utilizo para cifrarlo
 
 
-+Se selecciona y carga el archivo enciptado 
++ Se selecciona y carga el archivo enciptado 
 
 
-+Ingresa la contraseña que utilizo para cifrar
++ Ingresa la contraseña que utilizo para cifrar
 
 
 + Obtiene el archivo decifrado y se muestran los valores hash en color verde si el proceso concluyó de forma correcta 
