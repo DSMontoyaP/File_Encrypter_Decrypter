@@ -83,5 +83,5 @@ Se le solicita cargar un archivo que contenga información encriptada y la contr
 + Obtiene el archivo decifrado y se muestran los valores hash en color verde si el proceso concluyó de forma correcta 
 
 
-![archivoResultante](https://github.com/DSMontoyaP/File_Encrypter_Decrypter.git/Images/despuesArchivo.png)
+![archivo Resultante](Images/despuesArchivo.png)
 
