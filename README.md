@@ -17,15 +17,15 @@ operaciones criptograficas necesarias. Por otro lado, este programa permite alma
 
 Durante el desarrollo del proyecto se presentaron problemas para entender y aplicar el manejo de bytes de los archivos.
 
-**Conclusiones: **
+**Conclusiones:**
 
-+El cifrado y decifrado de archivos es extremadamente util para aplicaciones que manejan datos confidenciales o requieren 
++ El cifrado y decifrado de archivos es extremadamente util para aplicaciones que manejan datos confidenciales o requieren 
 seguridad de datos rigurosa.
 
-+El algoritmo AES es un cifrado de bloque simétrico que puede cifrar y descifrar datos. Ya que, este convierte los datos (texto legible) 
++ El algoritmo AES es un cifrado de bloque simétrico que puede cifrar y descifrar datos. Ya que, este convierte los datos (texto legible) 
 en un formato ininteligible denominado texto cifrado, mientras que el descifrado convierte este texto cifrado en texto legible (original)
 
-+Una función hash funciona en una sola dirección, esto quiere decir que de cualquier contenido podemos generar su hash, pero de un hash
++ Una función hash funciona en una sola dirección, esto quiere decir que de cualquier contenido podemos generar su hash, pero de un hash
 no hay forma de generar el contenido asociado a él, salvo probando al azar hasta dar con el contenido. Por este motivo, SHA-256 es una de 
 las funciones más usados por su equilibrio entre seguridad y coste computacional de generación, pues es un algoritmo muy eficiente para 
 la alta resistencia de colisión que tiene.
