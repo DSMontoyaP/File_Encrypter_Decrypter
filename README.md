@@ -38,7 +38,7 @@ la alta resistencia de colisión que tiene.
 **Función 1 (Cifrar archivo):** 
 
 
-![alt text](https://github.com/DSMontoyaP/File_Encrypter_Decrypter.git/images/inicioApp.png)
+![Inicio de porgrama](https://github.com/DSMontoyaP/File_Encrypter_Decrypter.git/images/inicioApp.png)
 
 
 al ingresar al programa se le solicitara que cargue un archivo en texto legible y una contraseña para cifrar
