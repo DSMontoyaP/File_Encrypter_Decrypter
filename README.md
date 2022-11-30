@@ -41,7 +41,7 @@ la alta resistencia de colisión que tiene.
 ![Inicio de porgrama](Images/inicioApp.png)
 
 
-al ingresar al programa se le solicitara que cargue un archivo en texto legible y una contraseña para cifrar
+al ingresar al programa se le solicitará que cargue un archivo en texto legible y una contraseña para cifrar
 
 
 ![Archivo que se va a cifrar](Images/antesArchivo.png)
@@ -71,7 +71,7 @@ Se le solicita cargar un archivo que contenga información encriptada y la contr
 ![seleccion archivo encriptado](Images/seleccionEncriptado.png)
 
 
-+ Se selecciona y carga el archivo enciptado 
++ Se selecciona y carga el archivo encriptado 
 
 
 + Ingresa la contraseña que utilizo para cifrar
