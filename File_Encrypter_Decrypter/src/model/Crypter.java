@@ -53,7 +53,7 @@ public class Crypter {
 		//Encrypts the file using AES/CBC/PKCS5Padding with previously created key and iv
 		byte[] file = encrypter.encryptFile("AES/CBC/PKCS5Padding", key, iv, fileToUse);
 		
-		File outputFile1 = new File("Encrypted.dec");
+		File outputFile1 = new File("Encrypted.enc");
 		outputFile1.createNewFile();
 		
 		//Writes encrypted content to new file

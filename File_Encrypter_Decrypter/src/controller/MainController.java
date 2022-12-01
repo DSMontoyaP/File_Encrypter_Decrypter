@@ -64,6 +64,12 @@ public class MainController {
     		crypter.setPassword(passwordTextField.getText());
     		crypter.setFile(selectedFile);
     		crypter.encryptFile();
+    		
+    		Alert a = new Alert(AlertType.INFORMATION);
+    		a.setTitle("Success");
+    		a.setContentText("File has been encrypted and saved into project folder");
+    		a.setHeaderText("Success");
+    		a.show();
     	}
     	
     	
@@ -71,7 +77,8 @@ public class MainController {
     
     @FXML
     void Decrypt(ActionEvent event) throws InvalidKeyException, NoSuchAlgorithmException, InvalidKeySpecException, NoSuchPaddingException, InvalidAlgorithmParameterException, BadPaddingException, IllegalBlockSizeException, IOException {
-    	if(!passwordTextField.getText().isBlank() && selectedFile != null){
+    	
+    	if(!passwordTextField.getText().isBlank() && selectedFile != null && selectedFile.getName().contains(".enc")){
     		crypter.setPassword(passwordTextField.getText());
     		crypter.setFile(selectedFile);
     		String result = crypter.decryptFile();
@@ -83,11 +90,25 @@ public class MainController {
 	    		signedHashLabel.setText(hashes[1]);
 	    		
 	    		decryptedHash.setTextFill(Color.GREEN);
-	    		signedHashLabel.setTextFill(Color.GREEN);		
+	    		signedHashLabel.setTextFill(Color.GREEN);	
+	    		
+				Alert a = new Alert(AlertType.INFORMATION, "File has been decrypted successfully");
+				a.setTitle("Success");
+	    		a.setHeaderText("");
+	    		a.show();
+	    		
     		}else {
-    			new Alert(AlertType.WARNING, "Mismatch in the signature detected, file has been tampered with");
+    				Alert a = new Alert(AlertType.WARNING, "Mismatch in the signature detected, file has been tampered with");
+    				a.show();
     		}
-    	}	
+    	}else {
+			if(!selectedFile.getName().contains(".enc")) {
+				Alert a = new Alert(AlertType.ERROR, "File does not have a .enc extension");
+				a.setTitle("Not decrypted");
+	    		a.setHeaderText("");
+	    		a.show();
+			}
+    	}
     }
 
     @FXML
